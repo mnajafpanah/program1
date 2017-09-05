@@ -1,0 +1,19 @@
+<project name="MohammadPro1" default="dist" basedir=".">
+    
+    <property name="src" location="src"/>
+    <property name="dist" location="dist"/>
+    
+    <target name="compile" description="compile the source">
+        <javac srcdir="${src}" destdir="." includeantruntime="false" fork="true"/>
+    </target>
+    
+    <target name="dist" depends="compile" description="generate the distribution">
+        <mkdir dir="${dist}"/>
+        <jar jarfile="${dist}/MohammadPro1-${DSTAMP}.jar" basedir="."/>
+    </target>
+    
+    <target name="clean" description="clean up">
+        <delete dir="${dist}"/>
+    </target>
+    
+</project>
